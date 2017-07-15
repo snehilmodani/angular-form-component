@@ -1,0 +1,227 @@
+// Variables
+@black12: rgba(0, 0, 0, 0.12);
+@black87: rgba(0, 0, 0, 0.87);
+@black54: rgba(0, 0, 0, 0.54);
+@black38: rgba(0, 0, 0, 0.38);
+
+.md-form-component{
+	padding: 5px;
+	padding-left: 0;
+	// background-color: peachpuff;
+	// border: 1px solid black;
+	.md-form-label {
+		font-weight: 500;
+		margin-bottom: 0px;
+		color: @black54;
+		&.label-select {
+			margin-bottom: 0px;
+		}
+		&.label-select {
+			margin-bottom: 0px;
+		}
+		&.label-checkbox {
+			margin-bottom: 0px;
+		}
+		&.label-date {
+			margin-bottom: 0px;
+		}
+		&.label-text {
+			margin-bottom: 0px;
+		}
+		&.label-autocomplete {
+			margin-bottom: 0px;
+		}
+	}
+	md-datepicker {
+		margin: 0;
+		padding: 0 2px;
+		&.md-datepicker-open {
+			.md-datepicker-input {
+
+			}
+		}
+		&.ng-invalid{
+			&.ng-dirty {
+				.md-datepicker-input-container, .md-datepicker-button {
+					border-color: rgb(221,44,0) !important;
+				}
+			}
+		}
+		.md-datepicker-button {
+			margin-left: 0;
+			margin-right: 0;
+		    border: 1px solid @black12;
+		    border-radius: 0;
+		    border-right: none;
+		}
+		.md-datepicker-input-container {
+			border: solid 1px @black12;
+			border-left: none;
+			width: 100%;
+			margin-bottom: 0;
+			margin-left: 0;
+			padding-bottom: 0;
+			padding-left: 6px;
+			.md-datepicker-input {
+				height: 100%;
+				width: 100%;
+				padding-bottom: 0;
+			}
+		}
+		.md-datepicker-triangle-button {
+			top: 2px;
+    		right: 8px;
+		}
+	}
+	md-input-container {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		.md-errors-spacer {
+			height: 1px;
+			max-height: 1px;
+			min-height: 1px;
+		}
+		md-checkbox {
+			margin: 10px 0;
+		}
+		md-autocomplete {
+			// background: none;
+			md-autocomplete-wrap {
+				&.md-whiteframe-z1 {
+					box-shadow: none;
+				}
+				input {
+					// height: 100%;
+				}
+				&.md-show-clear-button {
+					button {
+						border: 1px solid @black12!important;
+						border-right: none!important;
+						border-radius: 0;
+						height: 40px;
+						width: 40px;
+						margin: 0;
+					}
+				}
+			}
+		}
+		textarea {
+			padding: 2px 5px 2px 10px;
+			border-radius: 2px;
+			color: @black87;
+			border: solid 1px @black12;
+			&::-webkit-input-placeholder {
+	        	color: @black38;
+			}
+			&::-moz-placeholder {
+				color: @black38;
+			}
+			&:-ms-input-placeholder {
+				color: @black38;
+			}
+			&:-moz-placeholder {
+				color: @black38;
+			}
+			&[disabled] {
+				border-color: @black12;
+				background-image: none;
+				margin-bottom: inherit;
+			}
+			&.ng-invalid {
+				&.ng-dirty {
+				  border-width: 1px 1px 1px;
+				}
+			}
+		}
+	    input {
+	      // width: 220px;
+	      padding: 2px 5px 2px 10px;
+	      height: 40px;
+	      border-radius: 2px;
+	      color: @black87;
+	      border: solid 1px @black12;
+	      &::-webkit-input-placeholder {
+	        color: @black38;
+	      }
+	      &::-moz-placeholder {
+	        color: @black38;
+	      }
+	      &:-ms-input-placeholder {
+	        color: @black38;
+	      }
+	      &:-moz-placeholder {
+	        color: @black38;
+	      }
+	      &[disabled] {
+	        border-color: @black12;
+	        background-image: none;
+	        margin-bottom: inherit;
+	      }
+	      &.ng-invalid {
+	        &.ng-dirty {
+	          border-width: 1px 1px 1px;
+	          border-color: rgb(221,44,0) !important;
+	        }
+	      }
+	    }
+	    &.md-input-focused {
+	      .md-input {
+	      	padding: 2px 5px 2px 10px;
+	        border-color: @black12;
+	        border-width: 1px;
+	      }
+	    }
+	}
+	
+	md-select {
+		height: 40px;
+		&:not([disabled]) {
+			&:focus{
+				.md-select-value{
+					padding-bottom: 2px;
+					span {
+						&:not(.md-select-icon), .md-text {
+							white-space: nowrap;
+						    overflow: hidden;
+						    width: 90%;
+						    text-overflow: ellipsis;
+						}
+					}
+				}
+			}
+		}
+		&.ng-invalid{
+			&.ng-dirty {
+				.md-select-value {
+					border-width: 1px 1px 1px;
+					border-color: rgb(221,44,0) !important;
+				}
+			}
+		}
+		&.md-input-has-value {
+			[label-hide] {
+				display: none;
+			}
+		}
+		.md-select-value {
+			padding: 2px 5px 2px 10px;
+			border: solid 1px @black12 !important;
+			border-radius: 2px;
+			// .ng-invalid{
+			// 	&.ng-dirty {
+			// 		border-width: 1px 1px 1px;
+			// 	}
+			// }
+			:first-child {
+				transform: translate3d(0,0,0);
+				-webkit-transform: translate3d(0,0,0);
+			}
+			.md-select-icon {
+				&::after {
+					top: 0;
+					opacity: 0.54;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<form novalidate name="formComponentForm" class="formComponentForm" layout="column" layout-align="start stretch">
+	<md-content flex layout="column">
+		<md-card flex id="basicDetails" class="sale-form">
+			<md-card-header>
+				<md-card-header-text>
+			    <span class="md-title">Basic Details</span>
+			    <span class="md-subhead">Basic description about the contents</span>
+			  </md-card-header-text>
+			</md-card-header>
+			<md-card-content>
+				<form-component ng-repeat="config in formComponentConfig" config="config" model="formModel" editable="editMode"></form-component>
+			</md-card-content>
+		</md-card>
+	</md-content>
+</form>

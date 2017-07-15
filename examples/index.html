@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="formComponentExample">
+<head>
+	<title>Angular Form Component Example</title>
+
+	<link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../dist/form-component.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="ctrl/page.ctrl.js"></script>
+    <script type="text/javascript" src="../dist/form-component.min.js"></script>
+</head>
+<body>
+	<div id="root" ng-controller="PageController" layout="column" layout-align="center center">
+		<form novalidate name="formComponentForm" class="formComponentForm" layout="column" layout-align="start stretch">
+			<md-content flex layout="column">
+				<md-card flex id="basicDetails" class="sale-form">
+					<md-card-header>
+						<md-card-header-text>
+					    <span class="md-title">Basic Details</span>
+					    <span class="md-subhead">Basic description about the contents</span>
+					  </md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<md-form-component ng-repeat="config in formComponentConfig" config="config" model="formModel" editable="editMode"></form-component>
+					</md-card-content>
+				</md-card>
+			</md-content>
+		</form>
+	</div>
+</body>
+</html>

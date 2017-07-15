@@ -1,0 +1,26 @@
+{
+  "globals": {
+    "require": true,
+    "module": true,
+    "angular": true,
+    "define": true,
+    "moment": true
+  },
+  "jquery": true,
+  "browser":true,
+  "latedef": false,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  "curly": true,
+  "eqnull": true,
+  "eqeqeq":true,
+  "strict":"implied",
+  "nonew":true,
+  "nonbsp":true,
+  "noarg": true,
+  "freeze": true,
+  "shadow": true,
+  "unused": true,
+  "esversion" : 6
+}

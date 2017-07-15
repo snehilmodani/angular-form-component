@@ -1,0 +1,21 @@
+{
+  "name": "angular-form-component",
+  "authors": [
+    "Snehil Modani <snehilmodani>"
+  ],
+  "description": "Angular Material based form component",
+  "main": "dis/form-component.min.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-material": "^1.1.4"
+  }
+}
