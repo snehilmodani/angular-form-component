@@ -8,13 +8,18 @@ module.exports = function(grunt) {
       srcFolder: 'src',
       tplFolder: 'tpl',
       lessFolder: 'less',
-      bowerFolder: 'packages',
+      bowerFolder: 'bower_components',
       distFolder: 'dist',
+      docsFolder: 'docs',
+      vendorFolder: 'vendor',
       srcDir: '<%= config.srcFolder %>',
       lessDir: '<%= config.srcFolder %>/<%= config.lessFolder %>',
       bowerDir: '<%= config.bowerFolder %>',
       distDir: '<%= config.distFolder %>',
+      docsDir: '<%= config.docsFolder %>',
       tplDir: '<%= config.srcFolder %>/<%= config.tplFolder %>',
+      vendorDir: '<%= config.docsFolder %>/<%= config.vendorFolder %>',
+      docsDistDir: '<%= config.docsFolder %>/<%= config.distFolder %>',
       minFileName: 'form-component.min'
     }
   });
@@ -36,6 +41,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-angular-templates');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   function loadTasks(relPath) {
     return includeAll({
