@@ -73,6 +73,9 @@
           if(typeof ViewModel.model[ViewModel.config.code] === 'number' && ViewModel.model[ViewModel.config.code]) {
             ViewModel.model[ViewModel.config.code] = moment(ViewModel.model[ViewModel.config.code]).toDate();
           }
+        } else if (ViewModel.config && ViewModel.config.type === 'checkbox' && ViewModel.model[ViewModel.config.code]) {
+          // Hack for string/other truthy values
+          ViewModel.model[ViewModel.config.code] = true;
         }
 
         if(ViewModel.model[ViewModel.config.code] !== null && ViewModel.model[ViewModel.config.code] !== undefined) {
