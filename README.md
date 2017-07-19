@@ -18,4 +18,4 @@ The form provides the following components:
  * checkbox
  * autocomplete
 
-Chekout the [example](https://snehilmodani.github.io/angular-form-component/) utill the readme is updated:
+Chekout the [example](https://snehilmodani.github.io/angular-form-component/) untill the readme is updated.

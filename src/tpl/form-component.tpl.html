@@ -19,7 +19,8 @@
 					ng-minlength="config.minLength || undefined"
 					ng-maxlength="config.maxLength || undefined"
 					ng-pattern="config.pattern || undefined"
-					ng-change="config.changeFn(model[config.code], model)">
+					ng-change="config.changeFn(model[config.code], model)"
+					ng-blur="config.blurFn(model[config.code], model)">
 			<textarea
 					ng-if="config.type === 'textarea'"
 					ng-model="model[config.code]"
@@ -36,7 +37,9 @@
 					ng-maxlength="config.maxLength || undefined"
 					ng-pattern="config.pattern || undefined"
 					rows="{{config.textareaConfig.rows || 1}}"
-					ng-change="config.changeFn(model[config.code], model)"></textarea>
+					ng-change="config.changeFn(model[config.code], model)"
+					ng-blur="config.blurFn(model[config.code], model)">
+					</textarea>
 			<input 
 					ng-if="config.type === 'email'"
 					ng-model="model[config.code]"
@@ -52,7 +55,8 @@
 					ng-minlength="config.minLength"
 					ng-maxlength="config.maxLength"
 					ng-pattern="config.pattern || undefined"
-					ng-change="config.changeFn(model[config.code], model)">
+					ng-change="config.changeFn(model[config.code], model)"
+					ng-blur="config.blurFn(model[config.code], model)">
 			<input 
 					ng-if="config.type === 'number'"
 					ng-model="model[config.code]"
@@ -71,7 +75,8 @@
 					ng-minlength="config.minLength"
 					ng-maxlength="config.maxLength"
 					ng-pattern="config.pattern || undefined"
-					ng-change="config.changeFn(model[config.code], model)">
+					ng-change="config.changeFn(model[config.code], model)"
+					ng-blur="config.blurFn(model[config.code], model)">
 			<md-select
 					ng-if="config.type === 'select'" 
 					name="{{config.code}}"
@@ -81,7 +86,8 @@
 					aria-label="{{config.name}}" 
 					ng-disabled="config.disabled || !editable"
 					ng-required="config.required || false"
-					ng-change="config.changeFn(model[config.code], model)">
+					ng-change="config.changeFn(model[config.code], model)"
+					ng-blur="config.blurFn(model[config.code], model)">
 	      <md-option ng-if="config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
@@ -110,7 +116,7 @@
 	        md-no-cache="config.autocompleteConfig.noCache"
 	        md-selected-item="config.autocompleteConfig.selectedItem"
 	        md-search-text-change="config.autocompleteConfig.searchTextChange(config.autocompleteConfig.searchText)"
-	        md-search-text="(config.autocompleteConfig.searchText)"
+	        md-search-text="config.autocompleteConfig.searchText"
 	        md-selected-item-change="config.autocompleteConfig.selectedItemChange(item)"
 	        md-items="item in config.autocompleteConfig.querySearch(config.autocompleteConfig.searchText)"
 	        md-item-text="item[config.autocompleteConfig.displayKey]"
