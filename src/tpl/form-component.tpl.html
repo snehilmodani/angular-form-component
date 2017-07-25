@@ -117,6 +117,7 @@
 	    		ng-required="config.required || false"
 	        ng-disabled="config.disabled || !editable"
 	        md-input-name="{{config.code}}"
+	        ng-class="{ 'md-warning': config.warning }"
 	        md-no-asterisk
 	        md-input-id="{{config.code}}"
 	        md-no-cache="config.autocompleteConfig.noCache"
@@ -140,6 +141,7 @@
   	<md-datepicker flex layout="row" layout-align="stretch-center"
   			ng-if="config.type === 'date'"
   			name="{{config.code}}"
+  			ng-class="{ 'md-warning': config.warning }"
   			md-no-asterisk
   			id="{{config.code}}"
   			ng-model="model[config.code]"

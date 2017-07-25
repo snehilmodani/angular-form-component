@@ -114,6 +114,11 @@
           displayKey: 'name',
           minLength: 1
         }
+      }, {
+        name: 'Date',
+        code: 'name',
+        type: 'date',
+        warning: true
       }];
     }
 
