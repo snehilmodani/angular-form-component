@@ -67,7 +67,8 @@
         code: 'number',
         type: 'number',
         min: 0,
-        max: 100
+        max: 100,
+        warning: true
       }, {
         name: 'Options',
         code: 'option',
