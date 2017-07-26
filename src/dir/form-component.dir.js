@@ -64,6 +64,10 @@
        * @param      {Object}  action  Action to perform
        */
       function init() {
+        if(ViewModel.config.warning) {
+          ViewModel.config.warning = false;
+        }
+
         if (ViewModel.config && ViewModel.config.type === 'autocomplete') {
           ViewModel.config.autocompleteConfig.searchText = ViewModel.model[ViewModel.config.code];
           // delete the selected item if any is selected upon opening of autocomplete

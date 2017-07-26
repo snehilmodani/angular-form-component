@@ -67,8 +67,7 @@
         code: 'number',
         type: 'number',
         min: 0,
-        max: 100,
-        warning: true
+        max: 100
       }, {
         name: 'Options',
         code: 'option',
@@ -117,8 +116,7 @@
       }, {
         name: 'Date',
         code: 'name',
-        type: 'date',
-        warning: true
+        type: 'date'
       }];
     }
 
