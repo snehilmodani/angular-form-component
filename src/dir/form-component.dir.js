@@ -74,6 +74,12 @@
           delete ViewModel.config.autocompleteConfig.selectedItem;
 
         } else if (ViewModel.config && ViewModel.config.type === 'date') {
+          if(!ViewModel.config.dateConfig) {
+            ViewModel.config.dateConfig = {};
+          }
+
+          ViewModel.config.dateConfig.minDate = ViewModel.config.dateConfig.minDate ? moment(ViewModel.config.dateConfig.minDate).toDate() : undefined;
+          ViewModel.config.dateConfig.maxDate = ViewModel.config.dateConfig.maxDate ? moment(ViewModel.config.dateConfig.maxDate).toDate() : undefined;
           if(typeof ViewModel.model[ViewModel.config.code] === 'number' && ViewModel.model[ViewModel.config.code]) {
             ViewModel.model[ViewModel.config.code] = moment(ViewModel.model[ViewModel.config.code]).toDate();
           }

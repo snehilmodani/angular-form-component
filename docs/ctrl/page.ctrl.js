@@ -19,7 +19,7 @@
    * @param    {!Object}           $filter          $filter
    *
    */
-  function controller($scope, $q, $filter) {
+  function controller($scope, $q, $filter) {  
     var ViewModel = $scope;
     var formModel = {
     	name: 'Snehil'
@@ -115,8 +115,19 @@
         }
       }, {
         name: 'Date',
-        code: 'name',
-        type: 'date'
+        code: 'datepicker1',
+        type: 'date',
+        dateConfig: {
+          maxDate: 1501612200000,
+          minDate: 1501612200000
+        }
+      }, {
+        name: 'Date',
+        code: 'datepicker2',
+        type: 'date',
+        dateConfig: {
+          maxDate: 1501612200000
+        }
       }];
     }
 

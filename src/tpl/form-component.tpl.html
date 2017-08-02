@@ -146,6 +146,8 @@
   			id="{{config.code}}"
   			ng-model="model[config.code]"
   			md-placeholder="{{config.placeholder || 'Enter date'}}"
+  			md-min-date="(config.dateConfig && config.dateConfig.minDate) ? config.dateConfig.minDate : false"
+  			md-max-date="(config.dateConfig && config.dateConfig.maxDate) ? config.dateConfig.maxDate : false"
   			ng-required="config.required || false"
         ng-disabled="config.disabled || !editable"
         ng-change="config.changeFn(model[config.code], model)">
