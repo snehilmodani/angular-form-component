@@ -124,7 +124,7 @@
 	        md-selected-item="config.autocompleteConfig.selectedItem"
 	        md-search-text-change="config.autocompleteConfig.searchTextChange(config.autocompleteConfig.searchText)"
 	        md-search-text="config.autocompleteConfig.searchText"
-	        md-selected-item-change="config.autocompleteConfig.selectedItemChange(item)"
+	        md-selected-item-change="config.autocompleteConfig.selectedItemChange(item, model)"
 	        md-items="item in config.autocompleteConfig.querySearch(config.autocompleteConfig.searchText)"
 	        md-item-text="item[config.autocompleteConfig.displayKey]"
 	        md-min-length="config.autocompleteConfig.minLength || 0"
