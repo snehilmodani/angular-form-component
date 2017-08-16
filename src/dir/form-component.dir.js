@@ -73,9 +73,11 @@
           if(results.length === 1) {
             ViewModel.config.autocompleteConfig.selectedItem = results[0];
           }
-          ViewModel.config.autocompleteConfig.searchText = ViewModel.model[ViewModel.config.code];
-          // delete the selected item if any is selected upon opening of autocomplete
-          delete ViewModel.config.autocompleteConfig.selectedItem;
+          else {
+            ViewModel.config.autocompleteConfig.searchText = ViewModel.model[ViewModel.config.code];
+            // delete the selected item if any is selected upon opening of autocomplete
+            delete ViewModel.config.autocompleteConfig.selectedItem;
+          }
 
         } else if (ViewModel.config && ViewModel.config.type === 'date') {
           if(!ViewModel.config.dateConfig) {
