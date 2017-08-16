@@ -22,7 +22,8 @@
   function controller($scope, $q, $filter) {  
     var ViewModel = $scope;
     var formModel = {
-    	name: 'Snehil'
+    	name: 'Snehil',
+      autocomplete: 'one'
     };
 
     var searchResults = [{

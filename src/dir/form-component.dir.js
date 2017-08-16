@@ -69,6 +69,10 @@
         }
 
         if (ViewModel.config && ViewModel.config.type === 'autocomplete') {
+          var results = ViewModel.config.autocompleteConfig.querySearch(ViewModel.model[ViewModel.config.code]).$$state.value;
+          if(results.length === 1) {
+            ViewModel.config.autocompleteConfig.selectedItemChange(results[0], ViewModel.model);
+          }
           ViewModel.config.autocompleteConfig.searchText = ViewModel.model[ViewModel.config.code];
           // delete the selected item if any is selected upon opening of autocomplete
           delete ViewModel.config.autocompleteConfig.selectedItem;
