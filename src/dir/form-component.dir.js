@@ -70,7 +70,7 @@
 
         if (ViewModel.config && ViewModel.config.type === 'autocomplete') {
           var results = ViewModel.config.autocompleteConfig.querySearch(ViewModel.model[ViewModel.config.code]).$$state.value;
-          if(results.prop && results.prop.constructor === Array && results.length === 1) {
+          if(results && results.constructor === Array && results.length === 1) {
             ViewModel.config.autocompleteConfig.selectedItem = results[0];
           } else {
             ViewModel.config.autocompleteConfig.searchText = ViewModel.model[ViewModel.config.code];
