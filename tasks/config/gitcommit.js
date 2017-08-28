@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-  var source = ['<%= config.distDir %>/**', '<%= config.docsDir %>/**', '<%= config.srcDir %>/**', '<%= config.tasksDir %>/**'];
+  var source = ['<%= config.distDir %>/**', '<%= config.docsDir %>/**', '<%= config.srcDir %>/**', '<%= config.tasksDir %>/**', '<%= config.gruntFileName %>/**'];
   var packageSrc = ['<%= config.packageFileName %>'];
   var version = require('../../package.json').version;
 
