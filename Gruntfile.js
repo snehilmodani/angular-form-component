@@ -12,6 +12,7 @@ module.exports = function(grunt) {
       distFolder: 'dist',
       docsFolder: 'docs',
       vendorFolder: 'vendor',
+      tasksFolder: 'tasks',
       srcDir: '<%= config.srcFolder %>',
       lessDir: '<%= config.srcFolder %>/<%= config.lessFolder %>',
       bowerDir: '<%= config.bowerFolder %>',
@@ -20,7 +21,9 @@ module.exports = function(grunt) {
       tplDir: '<%= config.srcFolder %>/<%= config.tplFolder %>',
       vendorDir: '<%= config.docsFolder %>/<%= config.vendorFolder %>',
       docsDistDir: '<%= config.docsFolder %>/<%= config.distFolder %>',
-      minFileName: 'form-component.min'
+      minFileName: 'form-component.min',
+      tasksDir: '<%= config.tasksFolder %>',
+      packageFileName: 'package.json',
     }
   });
 
@@ -42,6 +45,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-git');
+  grunt.loadNpmTasks('grunt-version');
 
   function loadTasks(relPath) {
     return includeAll({
