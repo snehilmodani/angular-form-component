@@ -24,6 +24,7 @@ module.exports = function(grunt) {
       minFileName: 'form-component.min',
       tasksDir: '<%= config.tasksFolder %>',
       packageFileName: 'package.json',
+      gruntFileName: 'Gruntfile.js'
     }
   });
 
