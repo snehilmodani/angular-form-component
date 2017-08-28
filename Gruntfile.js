@@ -1,6 +1,11 @@
 module.exports = function(grunt) {
 
 	var path = require('path');
+	var semver = require('semver');
+
+	var currentVersion = require('./package.json').version;
+	var semverIncrementLevel = 'patch';
+	var newVersion = semver.inc(currentVersion, semverIncrementLevel);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -24,7 +29,10 @@ module.exports = function(grunt) {
       minFileName: 'form-component.min',
       tasksDir: '<%= config.tasksFolder %>',
       packageFileName: 'package.json',
-      gruntFileName: 'Gruntfile.js'
+      gruntFileName: 'Gruntfile.js',
+      currentVersion: currentVersion,
+      newVersion: newVersion,
+      semverIncrementLevel: semverIncrementLevel
     }
   });
 
@@ -48,6 +56,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-git');
   grunt.loadNpmTasks('grunt-version');
+  grunt.loadNpmTasks('grunt-replace');
 
   function loadTasks(relPath) {
     return includeAll({
