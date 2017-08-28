@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.config.set('version', {
     dist: {
       options: {
-        release: 'minor'
+        release: 'patch'
       },
       src: ['package.json'],
     }
