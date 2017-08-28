@@ -1,12 +1,12 @@
 module.exports = function(grunt) {
 
-var version = require('../../package.json').version;
+  var newVersion = ['<%= config.newVersion %>'];
 
   grunt.config.set('gittag', {
     version: {
       options: {
-        tag: 'v' + require('../../package.json').version,
-        message: 'Bumped to version: ' + version
+        tag: 'v' + newVersion,
+        message: 'Bumped to version: ' + newVersion
       }
     }
   });
