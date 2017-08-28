@@ -1,10 +1,9 @@
 module.exports = function(grunt) {
 
-  var semver = require('semver');
   var source = ['<%= config.distDir %>/**', '<%= config.docsDir %>/**', '<%= config.srcDir %>/**', '<%= config.tasksDir %>/**', '<%= config.gruntFileName %>'];
   var packageSrc = ['<%= config.packageFileName %>'];
   var currentVersion = ['<%= config.currentVersion %>'];
-  var newVersion = semver.inc(currentVersion, 'patch');
+  var newVersion = ['<%= config.newVersion %>'];
 
   grunt.config.set('gitcommit', {
     dist: {
@@ -18,7 +17,7 @@ module.exports = function(grunt) {
     },
     version: {
       options: {
-        message: 'bumped to: '+ newVersion,
+        message: 'bumped',
         noVerify: true
       },
       files: {

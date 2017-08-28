@@ -31,8 +31,7 @@ module.exports = function(grunt) {
       packageFileName: 'package.json',
       gruntFileName: 'Gruntfile.js',
       currentVersion: currentVersion,
-      newVersion: newVersion,
-      semverIncrementLevel: semverIncrementLevel
+      newVersion: newVersion
     }
   });
 
