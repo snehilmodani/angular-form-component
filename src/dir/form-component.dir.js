@@ -72,11 +72,10 @@
           if(ViewModel.config.autocompleteConfig && ViewModel.config.autocompleteConfig.displayKey && !ViewModel.config.autocompleteConfig.valueKey) {
             ViewModel.config.autocompleteConfig.valueKey = ViewModel.config.autocompleteConfig.displayKey;
           }
-          var results = ViewModel.config.autocompleteConfig.querySearch(ViewModel.model[ViewModel.config.code]).$$state.value;
+          var results = ViewModel.config.autocompleteConfig.querySearch(ViewModel.model[ViewModel.config.code]).$$state.value || [];
           if(results && results.constructor === Array && results.length === 1) {
             ViewModel.config.autocompleteConfig.selectedItem = results[0];
           } else {
-            /** new code **/
             if(ViewModel.model[ViewModel.config.code] !== undefined && ViewModel.model[ViewModel.config.code] !== null) {
               var found = false;
               for (var idx = results.length - 1; idx >= 0; idx--) {
@@ -107,11 +106,6 @@
               // delete the selected item if any is selected upon opening of autocomplete
               delete ViewModel.config.autocompleteConfig.selectedItem;
             }
-
-            /** old code **/
-//            ViewModel.config.autocompleteConfig.searchText = ViewModel.model[ViewModel.config.code];
-//            // delete the selected item if any is selected upon opening of autocomplete
-//            delete ViewModel.config.autocompleteConfig.selectedItem;
           }
 
         } else if (ViewModel.config && ViewModel.config.type === 'date') {
