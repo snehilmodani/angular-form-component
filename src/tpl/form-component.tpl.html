@@ -93,10 +93,10 @@
 					ng-required="config.required || false"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-	      <md-option ng-click="config.selectConfig.onItemSelectFn(option, model)" ng-if="config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]">
+	      <md-option ng-if="config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
-	      <md-option ng-click="config.selectConfig.onItemSelectFn(option, model)" ng-if="!config.selectConfig.valueKey || !config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option">
+	      <md-option ng-if="!config.selectConfig.valueKey || !config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option">
 	        {{option}}
 	      </md-option>
 	    </md-select>
@@ -113,10 +113,10 @@
 					ng-required="config.required || false"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-	      <md-option ng-click="config.selectConfig.onItemSelectFn(option, model)" ng-if="config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]">
+	      <md-option ng-if="config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
-	      <md-option ng-click="config.selectConfig.onItemSelectFn(option, model)" ng-if="!config.selectConfig.valueKey || !config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option">
+	      <md-option ng-if="!config.selectConfig.valueKey || !config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option">
 	        {{option}}
 	      </md-option>
 	    </md-select>

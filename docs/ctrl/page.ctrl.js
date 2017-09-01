@@ -75,10 +75,7 @@
         type: 'select',
         selectConfig: {
           options: ['Option1', 'Option2'],
-          multiple: true,
-          onItemSelectFn: function(option) {
-            console.log(option);
-          }
+          multiple: true
         }
       }, {
         name: 'Options 2',

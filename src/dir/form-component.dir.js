@@ -98,8 +98,6 @@
           if(!ViewModel.config.selectConfig) {
             ViewModel.config.selectConfig = {};
           }
-
-          console.log('ViewModel.config.selectConfig', ViewModel.config.selectConfig);
         }
 
         if(ViewModel.model[ViewModel.config.code] !== null && ViewModel.model[ViewModel.config.code] !== undefined) {
