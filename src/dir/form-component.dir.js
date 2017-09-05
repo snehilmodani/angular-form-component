@@ -128,9 +128,9 @@
         }
 
         if(ViewModel.model[ViewModel.config.code] !== null && ViewModel.model[ViewModel.config.code] !== undefined) {
-          // Call changeFn in the beginning
-          if(ViewModel.config.changeFn && typeof ViewModel.config.changeFn === 'function') {
-            ViewModel.config.changeFn(ViewModel.model[ViewModel.config.code], ViewModel.model);
+          // Call initFn in the beginning
+          if(ViewModel.config.initFn && typeof ViewModel.config.initFn === 'function') {
+            ViewModel.config.initFn(ViewModel.model[ViewModel.config.code], ViewModel.model);
           }
         }
       }
