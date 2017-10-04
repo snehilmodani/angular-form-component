@@ -23,7 +23,8 @@
     var ViewModel = $scope;
     var formModel = {
     	name: 'Snehil',
-      autocomplete: 'one'
+      autocomplete: 'one',
+      radio1: 'option1'
     };
 
     var searchResults = [{
@@ -129,6 +130,23 @@
         type: 'date',
         dateConfig: {
           maxDate: 1501612200000
+        }
+      }, {
+        name: 'Radio 1',
+        code: 'radio1',
+        type: 'radio',
+        // readonly: true,
+        // disabled: true,
+        radioConfig: {
+          options: [{
+            name: 'Option1',
+            code: 'option1'
+          }, {
+            name: 'Option2',
+            code: 'option2'
+          }],
+          valueKey: 'code',
+          textKey: 'name'
         }
       }];
     }

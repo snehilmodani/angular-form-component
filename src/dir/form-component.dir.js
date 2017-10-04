@@ -24,7 +24,7 @@
     return {
       restrict: 'EA',
       templateUrl: 'src/tpl/form-component.tpl.html',
-      // transclude: false,
+      transclude: true,
       // replace: true,
       scope: {
         config: '=',
@@ -124,6 +124,12 @@
         } else if (ViewModel.config && ViewModel.config.type === 'select') {
           if(!ViewModel.config.selectConfig) {
             ViewModel.config.selectConfig = {};
+          }
+
+          if(!ViewModel.config.selectConfig.asyncOptions) {
+            ViewModel.config.selectConfig.asyncOptions = function() {
+              // body...
+            };
           }
         }
 

@@ -83,13 +83,24 @@
 					ng-blur="config.blurFn(model[config.code], model)">
 			<md-radio-group ng-model="model[config.code]"
 					ng-if="config.type === 'radio'"
-					ng-change="config.changeFn(model[config.code], model)">
+					ng-change="config.changeFn(model[config.code], model)"
+					ng-readonly="config.readonly || false"
+					ng-required="config.required || false"
+					ng-disabled="config.disabled || !editable">
 	      <md-radio-button
-	      	ng-repeat="option in config.radioOptions.options"
-	      	value="{{option[config.radioOptions.valueKey]}}"
+	      	ng-if="config.radioConfig.valueKey && config.radioConfig.textKey"
+	      	ng-repeat="option in config.radioConfig.options"
+	      	value="{{option[config.radioConfig.valueKey]}}"
+	      	class="md-primary">
+	      		{{option[config.radioConfig.textKey]}}
+      	</md-radio-button>
+	      <md-radio-button
+	      	ng-if="!config.radioConfig.valueKey || !config.radioConfig.textKey"
+	      	ng-repeat="option in config.radioConfig.options"
+	      	value="{{option}}"
 	      	class="md-primary {{config.class}}">
-	      		{{option[config.radioOptions.textKey]}}
-	      	</md-radio-button>
+	      		{{option[config.radioConfig.textKey]}}
+      	</md-radio-button>
 	    </md-radio-group>
 			<md-select
 					ng-if="config.type === 'select' && !config.selectConfig.multiple" 
