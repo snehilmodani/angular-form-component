@@ -4,7 +4,7 @@
     "Snehil Modani <snehilmodani>"
   ],
   "description": "Angular Material based form component",
-  "main": "dis/form-component.min.js",
+  "main": "dist/form-component.min.js",
   "license": "MIT",
   "homepage": "",
   "ignore": [
