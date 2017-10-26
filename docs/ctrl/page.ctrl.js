@@ -63,7 +63,8 @@
         code: 'name',
         type: 'text',
         changeFn: changeFn,
-        required: true
+        required: true,
+        hideLabel: true
       }, {
         name: 'Number',
         code: 'number',
