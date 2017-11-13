@@ -90,14 +90,14 @@
 	      <md-radio-button
 	      	ng-if="config.radioConfig.valueKey && config.radioConfig.textKey"
 	      	ng-repeat="option in config.radioConfig.options"
-	      	ng-value="{{option[config.radioConfig.valueKey]}}"
+	      	value="{{option[config.radioConfig.valueKey]}}"
 	      	class="md-primary">
 	      		{{option[config.radioConfig.textKey]}}
       	</md-radio-button>
 	      <md-radio-button
 	      	ng-if="!config.radioConfig.valueKey || !config.radioConfig.textKey"
 	      	ng-repeat="option in config.radioConfig.options"
-	      	ng-value="{{option}}"
+	      	value="{{option}}"
 	      	class="md-primary">
 	      		{{option[config.radioConfig.textKey]}}
       	</md-radio-button>
