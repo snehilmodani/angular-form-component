@@ -91,6 +91,7 @@
 	      	ng-if="config.radioConfig.valueKey && config.radioConfig.textKey"
 	      	ng-repeat="option in config.radioConfig.options"
 	      	value="{{option[config.radioConfig.valueKey]}}"
+	      	aria-label="{{option[config.radioConfig.textKey]}}"
 	      	class="md-primary">
 	      		{{option[config.radioConfig.textKey]}}
       	</md-radio-button>
@@ -98,6 +99,7 @@
 	      	ng-if="!config.radioConfig.valueKey || !config.radioConfig.textKey"
 	      	ng-repeat="option in config.radioConfig.options"
 	      	value="{{option}}"
+	      	aria-label="{{option}}"
 	      	class="md-primary">
 	      		{{option[config.radioConfig.textKey]}}
       	</md-radio-button>
