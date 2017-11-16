@@ -177,8 +177,8 @@
 	        md-min-length="config.autocompleteConfig.minLength || 0"
 	        placeholder="{{config.placeholder}}">
 	      <md-item-template>
-	        <span ng-if="config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i">{{ item[config.autocompleteConfig.displayKey] }}</span>
-	        <span ng-if="!config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i">{{ item }}</span>
+	        <span ng-if="config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item[config.autocompleteConfig.displayKey]}}">{{ item[config.autocompleteConfig.displayKey] }}</span>
+	        <span ng-if="!config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item}}">{{ item }}</span>
 	      </md-item-template>
 	      <md-not-found>
 	        Nothing results matching "{{config.autocompleteConfig.searchText}}" were found.
