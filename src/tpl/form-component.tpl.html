@@ -81,8 +81,12 @@
 					ng-pattern="config.pattern || undefined"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-			<md-radio-group ng-model="model[config.code]"
+			<md-radio-group
 					ng-if="config.type === 'radio'"
+					ng-model="model[config.code]"
+					name="{{config.code}}"
+					aria-label="{{config.name}}"
+					ng-class="{ 'md-warning': config.warning }"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-readonly="config.readonly || false"
 					ng-required="config.required || false"

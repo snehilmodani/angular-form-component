@@ -4,7 +4,7 @@
     .controller('PageController', controller);
 
   controller.$inject = [
-    '$scope', '$q', '$filter'
+    '$scope', '$q', '$filter', '$timeout'
   ];
 
   /**
@@ -19,19 +19,19 @@
    * @param    {!Object}           $filter          $filter
    *
    */
-  function controller($scope, $q, $filter) {  
+  function controller($scope, $q, $filter, $timeout) {  
     var ViewModel = $scope;
     var formModel = {
     	name: 'Snehil',
       autocomplete: 'one',
-      radio1: 'option1'
+      // radio1: 'option1'
     };
 
     var searchResults = [{
-    	name: 'One',
+    	name: 'One One',
     	code: 'one'
     }, {
-    	name: 'Two',
+    	name: 'Two Two',
     	code: 'two'
     }];
 
@@ -115,6 +115,7 @@
           selectedItemChange: selectedAutocompleteFn,
           querySearch: autocompleteQueryFn2,
           displayKey: 'name',
+          valueKey: 'code',
           minLength: 1
         }
       }, {
@@ -136,6 +137,7 @@
         name: 'Radio 1',
         code: 'radio1',
         type: 'radio',
+        required: true,
         // readonly: true,
         // disabled: true,
         radioConfig: {
@@ -150,6 +152,10 @@
           textKey: 'name'
         }
       }];
+
+      $timeout(function() {
+        ViewModel.formComponentForm.radio1.$setDirty();
+      }, 100);
     }
 
     function selectedAutocompleteFn(selectedItem) {
@@ -197,6 +203,7 @@
      */
     function changeFn (selectedItem, model) {
     	console.log(selectedItem, model);
+
     }
 
   }
