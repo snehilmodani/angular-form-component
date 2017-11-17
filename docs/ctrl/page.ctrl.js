@@ -140,6 +140,7 @@
         required: true,
         // readonly: true,
         // disabled: true,
+        changeFn: changeFn,
         radioConfig: {
           options: [{
             name: 'Option1',

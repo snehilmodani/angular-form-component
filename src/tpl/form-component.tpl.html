@@ -41,7 +41,7 @@
 					rows="{{config.textareaConfig.rows || 1}}"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-					</textarea>
+			</textarea>
 			<input 
 					ng-if="config.type === 'email'"
 					ng-model="model[config.code]"
@@ -177,7 +177,7 @@
 	        md-min-length="config.autocompleteConfig.minLength || 0"
 	        placeholder="{{config.placeholder}}">
 	      <md-item-template>
-	        <span ng-if="config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item[config.autocompleteConfig.displayKey]}}">{{ item[config.autocompleteConfig.displayKey] }}</span>
+	        <span ng-if="config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item[config.autocompleteConfig.resultTitleKey] || item[config.autocompleteConfig.displayKey]}}">{{ item[config.autocompleteConfig.resultLabelKey] || item[config.autocompleteConfig.displayKey] }}</span>
 	        <span ng-if="!config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item}}">{{ item }}</span>
 	      </md-item-template>
 	      <md-not-found>
