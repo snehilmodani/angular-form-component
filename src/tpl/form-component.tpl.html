@@ -1,6 +1,6 @@
 <div class="md-form-component" layout="row" layout-align="start center" ng-if="!config.hide">
 	<div ng-if="!config.hideLabel" flex="40" layout="column" layout-align="start stretch">
-		<label class="md-form-label label-{{config.type}}" for="{{config.code}}" ng-bind="config.name"></label>
+		<label class="md-form-label label-{{config.type}}" for="{{config.code}}">{{ config.name }} {{ config.required ? '*' : ''}}</label>
 	</div>
 	<div flex="{{config.hideLabel ? '100' : '60' }}" layout="column" layout-align="center stretch">
 		<md-input-container class="md-block" flex layout="column" layout-align="center stretch" ng-if="config.type !== 'date'" md-no-float>
