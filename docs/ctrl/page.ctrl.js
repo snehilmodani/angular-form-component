@@ -152,6 +152,12 @@
           valueKey: 'code',
           textKey: 'name'
         }
+      }, {
+        name: 'Payment Details Shared',
+        code: 'paymentDetailsShared',
+        type: 'checkbox',
+        changeFn: selectedAutocompleteFn,
+        initFn: selectedAutocompleteFn
       }];
 
       $timeout(function() {

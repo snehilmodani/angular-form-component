@@ -157,7 +157,7 @@
 	    		ng-model="model[config.code]"
 	    		aria-label="{{config.name || config.code}}"
 	    		ng-required="config.required || false"
-	    		ng-change="config.changeFn">
+	    		ng-change="config.changeFn(model[config.code], model)">
   		</md-checkbox>
 	    <md-autocomplete
 	    		ng-if="config.type === 'autocomplete'"
