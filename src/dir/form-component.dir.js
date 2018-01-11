@@ -64,7 +64,7 @@
        * @param      {Object}  action  Action to perform
        */
       function init() {
-        if(ViewModel.config.warning) {
+        if(ViewModel.config && ViewModel.config.warning) {
           ViewModel.config.warning = false;
         }
 
