@@ -72,7 +72,7 @@
           if(ViewModel.config.autocompleteConfig && ViewModel.config.autocompleteConfig.displayKey && !ViewModel.config.autocompleteConfig.valueKey) {
             ViewModel.config.autocompleteConfig.valueKey = ViewModel.config.autocompleteConfig.displayKey;
           }
-          var results = ViewModel.config.autocompleteConfig.querySearch(ViewModel.model[ViewModel.config.code]).$$state.value || [];
+          var results = ViewModel.config.autocompleteConfig.querySearch(ViewModel.model[ViewModel.config.code], ViewModel.model).$$state.value || [];
           if(results && results.constructor === Array && results.length === 1) {
             ViewModel.config.autocompleteConfig.selectedItem = results[0];
           } else {
