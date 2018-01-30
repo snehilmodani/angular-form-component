@@ -172,7 +172,7 @@
 	        md-search-text-change="config.autocompleteConfig.searchTextChange(config.autocompleteConfig.searchText, model)"
 	        md-search-text="config.autocompleteConfig.searchText"
 	        md-selected-item-change="config.autocompleteConfig.selectedItemChange(item, model)"
-	        md-items="item in config.autocompleteConfig.querySearch(config.autocompleteConfig.searchText)"
+	        md-items="item in config.autocompleteConfig.querySearch(config.autocompleteConfig.searchText, model)"
 	        md-item-text="item[config.autocompleteConfig.displayKey]"
 	        md-min-length="config.autocompleteConfig.minLength || 0"
 	        placeholder="{{config.placeholder}}">
