@@ -169,7 +169,7 @@
 	        md-input-id="{{config.code}}"
 	        md-no-cache="config.autocompleteConfig.noCache"
 	        md-selected-item="config.autocompleteConfig.selectedItem"
-	        md-search-text-change="config.autocompleteConfig.searchTextChange(config.autocompleteConfig.searchText)"
+	        md-search-text-change="config.autocompleteConfig.searchTextChange(config.autocompleteConfig.searchText, model)"
 	        md-search-text="config.autocompleteConfig.searchText"
 	        md-selected-item-change="config.autocompleteConfig.selectedItemChange(item, model)"
 	        md-items="item in config.autocompleteConfig.querySearch(config.autocompleteConfig.searchText)"

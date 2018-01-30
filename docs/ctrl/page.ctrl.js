@@ -137,7 +137,7 @@
         name: 'Radio 1',
         code: 'radio1',
         type: 'radio',
-        required: true,
+        // required: true,
         // readonly: true,
         // disabled: true,
         changeFn: changeFn,
@@ -159,10 +159,6 @@
         changeFn: selectedAutocompleteFn,
         initFn: selectedAutocompleteFn
       }];
-
-      $timeout(function() {
-        ViewModel.formComponentForm.radio1.$setDirty();
-      }, 100);
     }
 
     function selectedAutocompleteFn(selectedItem) {
