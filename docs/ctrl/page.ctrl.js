@@ -4,7 +4,7 @@
     .controller('PageController', controller);
 
   controller.$inject = [
-    '$scope', '$q', '$filter'
+    '$scope', '$q', '$filter', '$timeout'
   ];
 
   /**
@@ -19,17 +19,19 @@
    * @param    {!Object}           $filter          $filter
    *
    */
-  function controller($scope, $q, $filter) {
+  function controller($scope, $q, $filter, $timeout) {  
     var ViewModel = $scope;
     var formModel = {
-    	name: 'Snehil'
+    	name: 'Snehil',
+      autocomplete: 'one',
+      // radio1: 'option1'
     };
 
     var searchResults = [{
-    	name: 'One',
+    	name: 'One One',
     	code: 'one'
     }, {
-    	name: 'Two',
+    	name: 'Two Two',
     	code: 'two'
     }];
 
@@ -61,7 +63,8 @@
         code: 'name',
         type: 'text',
         changeFn: changeFn,
-        required: true
+        required: true,
+        hideLabel: true
       }, {
         name: 'Number',
         code: 'number',
@@ -73,7 +76,8 @@
         code: 'option',
         type: 'select',
         selectConfig: {
-          options: ['Option1', 'Option2']
+          options: ['Option1', 'Option2'],
+          multiple: true
         }
       }, {
         name: 'Options 2',
@@ -111,8 +115,49 @@
           selectedItemChange: selectedAutocompleteFn,
           querySearch: autocompleteQueryFn2,
           displayKey: 'name',
+          valueKey: 'code',
           minLength: 1
         }
+      }, {
+        name: 'Date',
+        code: 'datepicker1',
+        type: 'date',
+        dateConfig: {
+          maxDate: 1501612200000,
+          minDate: 1501612200000
+        }
+      }, {
+        name: 'Date',
+        code: 'datepicker2',
+        type: 'date',
+        dateConfig: {
+          maxDate: 1501612200000
+        }
+      }, {
+        name: 'Radio 1',
+        code: 'radio1',
+        type: 'radio',
+        // required: true,
+        // readonly: true,
+        // disabled: true,
+        changeFn: changeFn,
+        radioConfig: {
+          options: [{
+            name: 'Option1',
+            code: 'option1'
+          }, {
+            name: 'Option2',
+            code: 'option2'
+          }],
+          valueKey: 'code',
+          textKey: 'name'
+        }
+      }, {
+        name: 'Payment Details Shared',
+        code: 'paymentDetailsShared',
+        type: 'checkbox',
+        changeFn: selectedAutocompleteFn,
+        initFn: selectedAutocompleteFn
       }];
     }
 
@@ -161,6 +206,7 @@
      */
     function changeFn (selectedItem, model) {
     	console.log(selectedItem, model);
+
     }
 
   }

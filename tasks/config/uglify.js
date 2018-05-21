@@ -4,6 +4,19 @@ module.exports = function(grunt) {
   var dest = '<%= config.distDir %>/<%= config.minFileName %>.js';
 
   grunt.config.set('uglify', {
+    debug: {
+      options: {
+        beautify: true,
+        comments: false,
+        compress: false,
+        mangle: false
+      },
+      files: [{
+        expand: false,
+        src: source,
+        dest: dest
+      }]
+    },
     dist: {
       options: {
         beautify: false,
