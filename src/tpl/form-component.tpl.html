@@ -3,7 +3,7 @@
 		<label class="md-form-label label-{{config.type}}" for="{{config.code}}">{{ config.name }} {{ config.required ? '*' : ''}}</label>
 	</div>
 	<div flex="{{config.hideLabel ? '100' : '60' }}" layout="column" layout-align="center stretch">
-		<md-input-container class="md-block" flex layout="column" layout-align="center stretch" ng-if="config.type !== 'date'" md-no-float>
+		<md-input-container class="md-block" flex layout="column" layout-align="center stretch" ng-if="config.type !== 'date' && config.type !== 'checkboxWithInput'" md-no-float>
 			<input 
 					ng-if="config.type === 'text'"
 					ng-model="model[config.code]"
@@ -146,8 +146,8 @@
 	      <md-option ng-if="!config.selectConfig.valueKey || !config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option">
 	        {{option}}
 	      </md-option>
-	    </md-select>
-	    <md-checkbox class="md-primary"
+			</md-select>
+			<md-checkbox class="md-primary"
 	    		ng-if="config.type === 'checkbox'"
 	    		ng-disabled="config.disabled || !editable"
 	    		name="{{config.code}}"
@@ -199,5 +199,37 @@
         ng-disabled="config.disabled || !editable"
         ng-change="config.changeFn(model[config.code], model)">
 		</md-datepicker>
+		<div class="checkbox-input" layout="row" flex layout-align="center stretch" ng-if="config.type === 'checkboxWithInput'">
+			<md-checkbox class="md-primary"
+				ng-disabled="config.disabled || !editable"
+				name="{{config.code}}"
+				ng-class="{ 'md-warning': config.warning }"
+				id="{{config.code}}"
+				md-no-asterisk
+				ng-model="model[config.code]"
+				aria-label="{{config.name || config.code}}"
+				ng-required="config.required || false"
+				ng-change="config.changeFn(model[config.code], model)">
+			</md-checkbox>
+			<md-input-container class="md-block" flex layout="column" layout-align="center stretch" md-no-float>
+				<input 
+						ng-model="model[config.inputBox.code]"
+						name="{{config.inputBox.code}}"
+						ng-class="{ 'md-warning': config.inputBox.warning }"
+						aria-label="{{config.inputBox.name || config.inputBox.code}}"
+						id="{{config.inputBox.code}}"
+						type="{{config.inputBox.type}}"
+						placeholder="{{config.inputBox.placeholder}}"
+						md-no-asterisk
+						ng-disabled="!model[config.code]"
+						ng-readonly="config.inputBox.readonly || false"
+						ng-required="config.inputBox.required || false"
+						ng-minlength="config.inputBox.minLength || undefined"
+						ng-maxlength="config.inputBox.maxLength || undefined"
+						ng-pattern="config.inputBox.pattern || undefined"
+						ng-change="config.inputBox.changeFn(model[config.inputBox.code], model)"
+						ng-blur="config.inputBox.blurFn(model[config.inputBox.code], model)">
+			</md-input-container>
+		</div>
 	 </div>
 </div>
