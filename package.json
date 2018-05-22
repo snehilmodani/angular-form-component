@@ -1,6 +1,6 @@
 {
   "name": "angular-form-component",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "description": "Angular Material based form component",
   "main": "dist/form-component.min.js",
   "scripts": {
