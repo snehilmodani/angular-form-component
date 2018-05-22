@@ -255,8 +255,11 @@
 						ng-required="config.dropdownBox.required || false"
 						ng-change="config.dropdownBox.changeFn(model[config.code], model)"
 						ng-blur="config.dropdownBox.blurFn(model[config.code], model)">
-						<md-option ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]">
+						<md-option ng-if="config.dropdownBox.selectConfig.valueKey && config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]">
 							{{option[config.dropdownBox.selectConfig.textKey]}}
+						</md-option>
+						<md-option ng-if="!config.dropdownBox.selectConfig.valueKey || !config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option">
+							{{option}}
 						</md-option>
 					</md-select>
 			</md-input-container>
