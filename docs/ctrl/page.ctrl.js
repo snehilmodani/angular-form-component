@@ -243,7 +243,6 @@
      */
     function changeFn (selectedItem, model) {
     	console.log(selectedItem, model);
-
     }
 
   }
