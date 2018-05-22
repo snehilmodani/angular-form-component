@@ -19,6 +19,7 @@
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-git": "^1.0.9",
     "grunt-replace": "^1.0.1",
+    "grunt-version": "^1.2.1",
     "include-all": "^4.0.3",
     "jshint-stylish": "^2.2.1",
     "semver": "^5.4.1"
