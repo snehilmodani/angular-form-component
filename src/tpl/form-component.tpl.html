@@ -244,24 +244,6 @@
 				ng-change="config.changeFn(model[config.code], model)">
 			</md-checkbox>
 			<md-input-container class="md-block" flex layout="column" layout-align="center stretch" md-no-float>
-				<!-- <input 
-						ng-model="model[config.inputBox.code]"
-						name="{{config.inputBox.code}}"
-						ng-class="{ 'md-warning': config.inputBox.warning }"
-						aria-label="{{config.inputBox.name || config.inputBox.code}}"
-						id="{{config.inputBox.code}}"
-						type="{{config.inputBox.type}}"
-						placeholder="{{config.inputBox.placeholder}}"
-						md-no-asterisk
-						ng-disabled="!model[config.code]"
-						ng-readonly="config.inputBox.readonly || false"
-						ng-required="config.inputBox.required || false"
-						ng-minlength="config.inputBox.minLength || undefined"
-						ng-maxlength="config.inputBox.maxLength || undefined"
-						ng-pattern="config.inputBox.pattern || undefined"
-						ng-change="config.inputBox.changeFn(model[config.inputBox.code], model)"
-						ng-blur="config.inputBox.blurFn(model[config.inputBox.code], model)"> -->
-
 					<md-select
 						name="{{config.dropdownBox.code}}"
 						ng-class="{ 'md-warning': config.warning }"
@@ -276,9 +258,6 @@
 						<md-option ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]">
 							{{option[config.dropdownBox.selectConfig.textKey]}}
 						</md-option>
-						<!-- <md-option ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option">
-							{{option}}
-						</md-option> -->
 					</md-select>
 			</md-input-container>
 		</div>
