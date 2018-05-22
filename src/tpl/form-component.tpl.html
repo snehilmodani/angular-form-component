@@ -109,7 +109,7 @@
       	</md-radio-button>
 	    </md-radio-group>
 			<md-select
-					ng-if="config.type === 'select' && !config.selectConfig.multiple && config.type !== 'checkboxWithDropdown'" 
+					ng-if="config.type === 'select' && !config.selectConfig.multiple" 
 					name="{{config.code}}"
 					ng-class="{ 'md-warning': config.warning }"
 					id="{{config.code}}" 
