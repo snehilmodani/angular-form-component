@@ -158,6 +158,19 @@
         type: 'checkbox',
         changeFn: selectedAutocompleteFn,
         initFn: selectedAutocompleteFn
+      }, {
+        name: 'Payment Document Shared',
+        code: 'paymentDocsCheck',
+        type: 'checkboxWithInput',
+        changeFn: selectedAutocompleteFn,
+        initFn: selectedAutocompleteFn,
+        inputBox: {
+          name: 'Name',
+          code: 'paymentDocsCheckInput',
+          type: 'text',
+          changeFn: changeFn,
+          required: true,
+        }
       }];
     }
 
@@ -206,7 +219,6 @@
      */
     function changeFn (selectedItem, model) {
     	console.log(selectedItem, model);
-
     }
 
   }
