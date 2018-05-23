@@ -218,6 +218,7 @@
     function autocompleteQueryFn2(searchKey) {
       var deferred = $q.defer();
       var arrayList = angular.copy(searchResults);
+      
       if(searchKey) {
         var results = $filter('filter')(arrayList, searchKey);
         deferred.resolve(results);
