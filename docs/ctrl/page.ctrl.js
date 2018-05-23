@@ -169,7 +169,31 @@
           code: 'paymentDocsCheckInput',
           type: 'text',
           changeFn: changeFn,
-          required: true,
+          required: true, 
+        }
+      }, {
+        name: 'Payment Document Shared',
+        code: 'paymentDocsCheck2',
+        type: 'checkboxWithDropdown',
+        changeFn: selectedAutocompleteFn,
+        initFn: selectedAutocompleteFn,
+        dropdownBox: {
+          name: 'Name',
+          code: 'paymentDocsCheckDropdown',
+          type: 'select',
+          selectConfig: {
+            options: [{
+              name: 'Option1',
+              code: 'option1'
+            }, {
+              name: 'Option2',
+              code: 'option2'
+            }],
+            valueKey: 'code',
+            textKey: 'name'
+          },
+          changeFn: changeFn,
+          required: true, 
         }
       }];
     }

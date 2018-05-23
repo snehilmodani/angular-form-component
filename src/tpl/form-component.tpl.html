@@ -231,5 +231,38 @@
 						ng-blur="config.inputBox.blurFn(model[config.inputBox.code], model)">
 			</md-input-container>
 		</div>
+		<div class="checkbox-dropdown" layout="row" flex layout-align="center stretch" ng-if="config.type === 'checkboxWithDropdown'">
+			<md-checkbox class="md-primary"
+				ng-disabled="config.disabled || !editable"
+				name="{{config.code}}"
+				ng-class="{ 'md-warning': config.warning }"
+				id="{{config.code}}"
+				md-no-asterisk
+				ng-model="model[config.code]"
+				aria-label="{{config.name || config.code}}"
+				ng-required="config.required || false"
+				ng-change="config.changeFn(model[config.code], model)">
+			</md-checkbox>
+			<md-input-container class="md-block" flex layout="column" layout-align="center stretch" md-no-float>
+					<md-select
+						name="{{config.dropdownBox.code}}"
+						ng-class="{ 'md-warning': config.warning }"
+						id="{{config.dropdownBox.code}}" 
+						md-no-asterisk
+						ng-model="model[config.dropdownBox.code]"
+						aria-label="{{config.dropdownBox.name || config.dropdownBox.code}}" 
+						ng-disabled="!model[config.code]"
+						ng-required="config.dropdownBox.required || false"
+						ng-change="config.dropdownBox.changeFn(model[config.code], model)"
+						ng-blur="config.dropdownBox.blurFn(model[config.code], model)">
+						<md-option ng-if="config.dropdownBox.selectConfig.valueKey && config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]">
+							{{option[config.dropdownBox.selectConfig.textKey]}}
+						</md-option>
+						<md-option ng-if="!config.dropdownBox.selectConfig.valueKey || !config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option">
+							{{option}}
+						</md-option>
+					</md-select>
+			</md-input-container>
+		</div>
 	 </div>
 </div>
