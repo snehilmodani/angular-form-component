@@ -164,7 +164,7 @@
 	    		aria-label="{{config.name || config.code}}"
 	    		ng-required="config.required || false"
 	    		ng-change="config.changeFn(model[config.code], model)"
-					data-auto="{{confid.code}}-checkbox">
+				data-auto="{{config.code}}-checkbox">
   		</md-checkbox>
 	    <md-autocomplete
 	    		ng-if="config.type === 'autocomplete'"
@@ -182,7 +182,8 @@
 	        md-items="item in config.autocompleteConfig.querySearch(config.autocompleteConfig.searchText, model)"
 	        md-item-text="item[config.autocompleteConfig.displayKey]"
 	        md-min-length="config.autocompleteConfig.minLength || 0"
-	        placeholder="{{config.placeholder}}">
+	        placeholder="{{config.placeholder}}"
+			data-auto="{{config.code}}-autocomplete">
 	      <md-item-template>
 	        <span ng-if="config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item[config.autocompleteConfig.resultTitleKey] || item[config.autocompleteConfig.displayKey]}}" data-auto="{{config.code}}-{{item[config.autocompleteConfig.resultTitleKey] || item[config.autocompleteConfig.displayKey]}}-autocomplete">{{ item[config.autocompleteConfig.resultLabelKey] || item[config.autocompleteConfig.displayKey] }}</span>
 	        <span ng-if="!config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item}}"  data-auto="{{config.code}}-{{item}}-autocomplete">{{ item }}</span>
