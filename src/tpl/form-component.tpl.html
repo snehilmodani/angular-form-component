@@ -184,8 +184,8 @@
 	        md-min-length="config.autocompleteConfig.minLength || 0"
 	        placeholder="{{config.placeholder}}"
 			data-auto="{{config.code}}-autocomplete">
-	      <md-item-template>
-	        <span ng-if="config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item[config.autocompleteConfig.resultTitleKey] || item[config.autocompleteConfig.displayKey]}}" data-auto="{{config.code}}-{{item[config.autocompleteConfig.resultTitleKey] || item[config.autocompleteConfig.displayKey]}}-autocomplete">{{ item[config.autocompleteConfig.resultLabelKey] || item[config.autocompleteConfig.displayKey] }}</span>
+	      <md-item-template class="{{config.code}}-template-autocomplete" data-auto="{{config.code}}-template-autocomplete">
+	        <span ng-if="config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item[config.autocompleteConfig.resultTitleKey] || item[config.autocompleteConfig.displayKey]}}" data-auto="{{config.code}}-{{item[config.autocompleteConfig.valueKey]}}-autocomplete">{{ item[config.autocompleteConfig.resultLabelKey] || item[config.autocompleteConfig.displayKey] }}</span>
 	        <span ng-if="!config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item}}"  data-auto="{{config.code}}-{{item}}-autocomplete">{{ item }}</span>
 	      </md-item-template>
 	      <md-not-found>
