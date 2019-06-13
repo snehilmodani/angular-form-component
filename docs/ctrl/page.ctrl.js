@@ -26,6 +26,9 @@
       autocomplete: 'one',
       // radio1: 'option1'
     };
+    var defaultDate = new Date();
+    var defaultMinDate = new Date(defaultDate.getFullYear(), defaultDate.getMonth() - 1, defaultDate.getDate());
+    var defaultMaxDate = new Date(defaultDate.getFullYear(), defaultDate.getMonth() + 1, defaultDate.getDate());
 
     var searchResults = [{
     	name: 'One One',
@@ -123,15 +126,16 @@
         code: 'datepicker1',
         type: 'date',
         dateConfig: {
-          maxDate: 1501612200000,
-          minDate: 1501612200000
-        }
+          minDate: defaultMinDate,
+          maxDate: defaultMaxDate
+        },
+        changeFn: changeDateFn
       }, {
         name: 'Date',
         code: 'datepicker2',
         type: 'date',
         dateConfig: {
-          maxDate: 1501612200000
+          maxDate: new Date()
         }
       }, {
         name: 'Radio 1',
@@ -200,6 +204,11 @@
 
     function selectedAutocompleteFn(selectedItem) {
     	console.log(selectedItem);
+    }
+
+    function changeDateFn(selectedItem){
+      var date2Config = ViewModel.formComponentConfig[7];
+      date2Config.dateConfig.minDate = new Date(selectedItem);
     }
 
     function autocompleteQueryFn(searchKey) {
