@@ -208,7 +208,7 @@
   			ng-required="config.required || false"
         ng-disabled="config.disabled || !editable"
         ng-change="config.changeFn(model[config.code], model)"
-				data-auto="{{config.code}}-datepicker">
+				data-auto="{{config.code}}-datepicker" md-open-on-focus>
 		</md-datepicker>
 		<div class="checkbox-input" layout="row" flex layout-align="center stretch" ng-if="config.type === 'checkboxWithInput'">
 			<md-checkbox class="md-primary"
