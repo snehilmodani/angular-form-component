@@ -49,8 +49,13 @@
      */
     function controller($scope) {
       var ViewModel = $scope;
+      var constants = {
+        LIST: 'LIST',
+        OBJECT: 'OBJECT',
+      }
 
       init();
+      ViewModel.constants = constants;
 
       // //////////////////////////////////////////////////////
 
@@ -129,10 +134,30 @@
             ViewModel.config.selectConfig = {};
           }
 
+          if (!ViewModel.config.selectConfig.optionType) {
+            ViewModel.config.selectConfig.optionType = constants.LIST;
+          }
+
           if(!ViewModel.config.selectConfig.asyncOptions) {
             ViewModel.config.selectConfig.asyncOptions = function() {
               // body...
             };
+          }
+        } else if (ViewModel.config && ViewModel.config.type === 'radio') {
+          if(!ViewModel.config.radioConfig) {
+            ViewModel.config.radioConfig = {};
+          }
+
+          if (!ViewModel.config.radioConfig.optionType) {
+            ViewModel.config.radioConfig.optionType = constants.LIST;
+          }
+        } else if (ViewModel.config && ViewModel.config.type === 'checkboxWithDropdown') {
+          if (!ViewModel.config.dropdownBox.selectConfig) {
+            ViewModel.config.dropdownBox.selectConfig = {}
+          }
+
+          if (!ViewModel.config.dropdownBox.selectConfig.optionType) {
+            ViewModel.config.dropdownBox.selectConfig.optionType = constants.LIST;
           }
         }
 

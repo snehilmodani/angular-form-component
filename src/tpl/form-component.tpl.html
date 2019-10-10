@@ -96,7 +96,7 @@
 					ng-required="config.required || false"
 					ng-disabled="config.disabled || !editable" >
 	      <md-radio-button
-	      	ng-if="config.radioConfig.valueKey && config.radioConfig.textKey"
+	      	ng-if="config.radioConfig.optionType !== constants.OBJECT && config.radioConfig.valueKey && config.radioConfig.textKey"
 	      	ng-repeat="option in config.radioConfig.options"
 	      	value="{{option[config.radioConfig.valueKey]}}"
 	      	aria-label="{{option[config.radioConfig.textKey]}}"
@@ -105,12 +105,21 @@
 	      		{{option[config.radioConfig.textKey]}}
       	</md-radio-button>
 	      <md-radio-button
-	      	ng-if="!config.radioConfig.valueKey || !config.radioConfig.textKey"
+	      	ng-if="config.radioConfig.optionType !== constants.OBJECT && (!config.radioConfig.valueKey || !config.radioConfig.textKey)"
 	      	ng-repeat="option in config.radioConfig.options"
 	      	value="{{option}}"
 	      	aria-label="{{option}}"
 	      	class="md-primary" data-auto="{{config.code}}-{{option}}-radio">
 	      		{{option[config.radioConfig.textKey]}}
+      	</md-radio-button>
+				<md-radio-button
+	      	ng-if="config.radioConfig.optionType === constants.OBJECT"
+	      	ng-repeat="(key, value) in config.radioConfig.options"
+	      	value="{{key}}"
+	      	aria-label="{{value}}"
+	      	class="md-primary"
+					data-auto="{{config.code}}-{{key}}-radio">
+	      		{{value}}
       	</md-radio-button>
 	    </md-radio-group>
 			<md-select
@@ -126,12 +135,15 @@
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)"
 					data-auto="{{config.code}}-select" >
-	      <md-option ng-if="config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
-	      <md-option ng-if="!config.selectConfig.valueKey || !config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
 	        {{option}}
 	      </md-option>
+				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.options" ng-value="key" data-auto="{{config.code}}-{{key}}-select">
+					{{value}}
+				</md-option>
 	    </md-select>
 	    <md-select
 					ng-if="config.type === 'select' && config.selectConfig.multiple"
@@ -146,12 +158,15 @@
 					ng-required="config.required || false"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-	      <md-option ng-if="config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
-	      <md-option ng-if="!config.selectConfig.valueKey || !config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
 	        {{option}}
 	      </md-option>
+				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.options" ng-value="key" data-auto="{{config.code}}-{{key}}-select">
+					{{value}}
+				</md-option>
 			</md-select>
 			<md-checkbox class="md-primary"
 	    		ng-if="config.type === 'checkbox'"
@@ -164,7 +179,7 @@
 	    		aria-label="{{config.name || config.code}}"
 	    		ng-required="config.required || false"
 	    		ng-change="config.changeFn(model[config.code], model)"
-				data-auto="{{config.code}}-checkbox">
+					data-auto="{{config.code}}-checkbox">
   		</md-checkbox>
 	    <md-autocomplete
 	    		ng-if="config.type === 'autocomplete'"
@@ -269,11 +284,14 @@
 						ng-required="config.dropdownBox.required || false"
 						ng-change="config.dropdownBox.changeFn(model[config.code], model)"
 						ng-blur="config.dropdownBox.blurFn(model[config.code], model)">
-						<md-option ng-if="config.dropdownBox.selectConfig.valueKey && config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-checkbox-input">
+						<md-option ng-if="config.dropdownBox.selectConfig.optionType !== constants.OBJECT && config.dropdownBox.selectConfig.valueKey && config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-checkbox-input">
 							{{option[config.dropdownBox.selectConfig.textKey]}}
 						</md-option>
-						<md-option ng-if="!config.dropdownBox.selectConfig.valueKey || !config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option" data-auto="{{config.dropdownBox.code}}-{{option}}-checkbox-input">
+						<md-option ng-if="config.dropdownBox.selectConfig.optionType !== constants.OBJECT && (!config.dropdownBox.selectConfig.valueKey || !config.dropdownBox.selectConfig.textKey)" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option" data-auto="{{config.dropdownBox.code}}-{{option}}-checkbox-input">
 							{{option}}
+						</md-option>
+						<md-option ng-if="config.dropdownBox.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.dropdownBox.selectConfig.options" ng-value="key" data-auto="{{config.dropdownBox.code}}-{{key}}-checkbox-input">
+							{{value}}
 						</md-option>
 					</md-select>
 			</md-input-container>

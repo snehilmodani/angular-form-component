@@ -19,7 +19,7 @@
    * @param    {!Object}           $filter          $filter
    *
    */
-  function controller($scope, $q, $filter, $timeout) {  
+  function controller($scope, $q, $filter, $timeout) {
     var ViewModel = $scope;
     var formModel = {
     	name: 'Snehil',
@@ -173,7 +173,7 @@
           code: 'paymentDocsCheckInput',
           type: 'text',
           changeFn: changeFn,
-          required: true, 
+          required: true,
         }
       }, {
         name: 'Payment Document Shared',
@@ -197,7 +197,19 @@
             textKey: 'name'
           },
           changeFn: changeFn,
-          required: true, 
+          required: true,
+        }
+      }, {
+        name: 'Select (with Object options)',
+        code: 'objectSelect',
+        type: 'select',
+        selectConfig: {
+          optionType: 'OBJECT',
+          options: {
+            OPTION1: 'Option 1',
+            OPTION2: 'Option 2',
+            OPTION3: 'Option 3',
+          },
         }
       }];
     }
@@ -227,7 +239,7 @@
     function autocompleteQueryFn2(searchKey) {
       var deferred = $q.defer();
       var arrayList = angular.copy(searchResults);
-      
+
       if(searchKey) {
         var results = $filter('filter')(arrayList, searchKey);
         deferred.resolve(results);
