@@ -211,7 +211,8 @@
 	        <span ng-if="!config.autocompleteConfig.displayKey" md-highlight-text="config.autocompleteConfig.searchText" md-highlight-flags="^i" title="{{item}}"  data-auto="{{config.code}}-{{item}}-autocomplete">{{ item }}</span>
 	      </md-item-template>
 	      <md-not-found>
-	        Nothing results matching "{{config.autocompleteConfig.searchText}}" were found.
+					<span ng-if="config.autocompleteConfig.searchText.length === 0">No options available</span>
+					<span ng-if="config.autocompleteConfig.searchText.length > 0">No results matching "{{config.autocompleteConfig.searchText}}" were found.</span>
 	      </md-not-found>
 	    </md-autocomplete>
 	  </md-input-container>
