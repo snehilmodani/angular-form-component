@@ -143,14 +143,16 @@
           if (!ViewModel.config.selectConfig.search) {
             ViewModel.config.selectConfig.search = false;
           }
+          if (!ViewModel.config.selectConfig.searchKey) {
+            ViewModel.config.selectConfig.searchKey = '$$search' + ViewModel.config.code;
+          }
+
 
           if (ViewModel.config.selectConfig.optionType === constants.OBJECT) {
             ViewModel.config.selectConfig.optionsObj = angular.copy(ViewModel.config.selectConfig.options);
             ViewModel.config.selectConfig.options = [];
             ViewModel.config.selectConfig.search = false;
           }
-
-          ViewModel.config.selectConfig.searchKey = ViewModel.config.code + 'Search';
 
           if(!ViewModel.config.selectConfig.asyncOptions) {
             ViewModel.config.selectConfig.asyncOptions = function() {
