@@ -56,6 +56,7 @@
 
       init();
       ViewModel.constants = constants;
+      ViewModel.stopEventPropagation = stopEventPropagation;
 
       // //////////////////////////////////////////////////////
 
@@ -69,6 +70,7 @@
        * @param      {Object}  action  Action to perform
        */
       function init() {
+        ViewModel.search = {};
         if(ViewModel.config && ViewModel.config.warning) {
           ViewModel.config.warning = false;
         }
@@ -138,6 +140,20 @@
             ViewModel.config.selectConfig.optionType = constants.LIST;
           }
 
+          if (!ViewModel.config.selectConfig.search) {
+            ViewModel.config.selectConfig.search = false;
+          }
+          if (!ViewModel.config.selectConfig.searchKey) {
+            ViewModel.config.selectConfig.searchKey = '$$search' + ViewModel.config.code;
+          }
+
+
+          if (ViewModel.config.selectConfig.optionType === constants.OBJECT) {
+            ViewModel.config.selectConfig.optionsObj = angular.copy(ViewModel.config.selectConfig.options);
+            ViewModel.config.selectConfig.options = [];
+            ViewModel.config.selectConfig.search = false;
+          }
+
           if(!ViewModel.config.selectConfig.asyncOptions) {
             ViewModel.config.selectConfig.asyncOptions = function() {
               // body...
@@ -167,6 +183,11 @@
             ViewModel.config.initFn(ViewModel.model[ViewModel.config.code], ViewModel.model);
           }
         }
+      }
+
+      function stopEventPropagation(event){
+        console.log('event', event);
+        event.stopPropagation();
       }
     }
   }

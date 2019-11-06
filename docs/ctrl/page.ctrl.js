@@ -87,6 +87,7 @@
         code: 'option2',
         type: 'select',
         selectConfig: {
+          search: true,
           options: [{
           	name: 'Option1',
           	code: 'option1'
