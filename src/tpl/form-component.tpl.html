@@ -1,4 +1,4 @@
-<div class="md-form-component" layout="row" layout-align="start center" ng-if="!config.hide">
+<div class="md-form-component" ng-class="config.className" layout="row" layout-align="start center" ng-if="!config.hide">
 	<div ng-if="!config.hideLabel" flex="40" layout="column" layout-align="start stretch">
 		<label class="md-form-label label-{{config.type}}" for="{{config.code}}" data-auto="{{config.code}}-{{config.type}}-label">{{ config.name }} {{ config.required ? '*' : ''}}</label>
 	</div>
@@ -22,7 +22,7 @@
 					ng-pattern="config.pattern || undefined"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)"
-					data-auto="{{config.code}}-text" >
+					data-auto="{{config.code}}-text">
 			<textarea
 					ng-if="config.type === 'textarea'"
 					ng-model="model[config.code]"
@@ -67,7 +67,7 @@
 					ng-if="config.type === 'number'"
 					ng-model="model[config.code]"
 					name="{{config.code}}"
-					ng-class="{ 'md-warning': config.warning }"
+					ng-class="{ 'md-warning': config.warning, {{config.className}} : config.className }"
 					aria-label="{{config.name || config.code}}"
 					id="{{config.code}}"
 					type="number"
