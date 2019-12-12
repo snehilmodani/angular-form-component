@@ -73,8 +73,17 @@
         code: 'number',
         type: 'number',
         min: 0,
-        max: 100
+        max: 100,
+        className: 'hello maxHeight'
       }, {
+        name: 'Textarea',
+        code: 'textarea',
+        type: 'textarea',
+        className: 'maxHeight',
+        textareaConfig: {
+          rows: 4
+        }
+      },{
         name: 'Options',
         code: 'option',
         type: 'select',
