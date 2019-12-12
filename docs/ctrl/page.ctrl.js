@@ -74,7 +74,7 @@
         type: 'number',
         min: 0,
         max: 100,
-        className: 'hello maxHeight'
+        className: 'maxHeight'
       }, {
         name: 'Textarea',
         code: 'textarea',
