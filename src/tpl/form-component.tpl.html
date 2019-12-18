@@ -67,7 +67,7 @@
 					ng-if="config.type === 'number'"
 					ng-model="model[config.code]"
 					name="{{config.code}}"
-					ng-class="{ 'md-warning': config.warning, {{config.className}} : config.className }"
+					ng-class="{ 'md-warning': config.warning }"
 					aria-label="{{config.name || config.code}}"
 					id="{{config.code}}"
 					type="number"
