@@ -135,18 +135,13 @@
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)"
 					data-auto="{{config.code}}-select" >
-					<md-select-header layout="column" ng-show="config.selectConfig.search">
-						<md-input-container class="search-filter">
-							<input type="text" placeholder="{{ config.name }}" ng-model="search[config.selectConfig.searchKey]" class="md-text" ng-keydown="stopEventPropagation($event)">
-						</md-input-container>
-					</md-select-header>
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options | filter:search[config.selectConfig.searchKey]" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options  | filter:search[config.selectConfig.searchKey]" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
 	        {{option}}
 	      </md-option>
-				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.optionsObj" ng-value="key" data-auto="{{config.code}}-{{key}}-select">
+				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.options" ng-value="key" data-auto="{{config.code}}-{{key}}-select">
 					{{value}}
 				</md-option>
 	    </md-select>
@@ -163,18 +158,13 @@
 					ng-required="config.required || false"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-					<md-select-header layout="column" ng-show="config.selectConfig.search">
-						<md-input-container class="search-filter">
-							<input type="text" placeholder="{{ config.name }}" ng-model="search[config.selectConfig.searchKey]" class="md-text" ng-keydown="stopEventPropagation($event)">
-						</md-input-container>
-					</md-select-header>
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options | filter:search[config.selectConfig.searchKey]" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options | filter:search[config.selectConfig.searchKey]" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
 	        {{option}}
 	      </md-option>
-				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.optionsObj" ng-value="key" data-auto="{{config.code}}-{{key}}-select">
+				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.options" ng-value="key" data-auto="{{config.code}}-{{key}}-select">
 					{{value}}
 				</md-option>
 			</md-select>
