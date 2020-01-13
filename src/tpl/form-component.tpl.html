@@ -185,6 +185,7 @@
 	    		ng-if="config.type === 'autocomplete'"
 	    		ng-required="config.required || false"
 	        ng-disabled="config.disabled || !editable"
+					md-clear-button="!config.disabled && editable"
 	        md-input-name="{{config.code}}"
 	        ng-class="{ 'md-warning': config.warning }"
 	        md-no-asterisk
