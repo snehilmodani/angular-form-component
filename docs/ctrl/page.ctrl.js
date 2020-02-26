@@ -65,20 +65,22 @@
         name: 'Name',
         code: 'name',
         type: 'text',
+        placeholder: 'Enter Name',
         changeFn: changeFn,
         required: true,
         hideLabel: true
       }, {
         name: 'Number',
         code: 'number',
+        placeholder: '99',
         type: 'number',
         min: 0,
         max: 100,
-        className: 'maxHeight'
       }, {
         name: 'Textarea',
         code: 'textarea',
         type: 'textarea',
+        placeholder: 'Enter Comments',
         className: 'maxHeight',
         textareaConfig: {
           rows: 4
@@ -95,6 +97,7 @@
         name: 'Options 2',
         code: 'option2',
         type: 'select',
+        placeholder: 'Select',
         selectConfig: {
           options: [{
           	name: 'Option1',
@@ -146,26 +149,23 @@
         dateConfig: {
           maxDate: new Date()
         }
-      }, {
-        name: 'Radio 1',
-        code: 'radio1',
-        type: 'radio',
-        // required: true,
-        // readonly: true,
-        // disabled: true,
-        changeFn: changeFn,
-        radioConfig: {
-          options: [{
-            name: 'Option1',
-            code: 'option1'
-          }, {
-            name: 'Option2',
-            code: 'option2'
-          }],
-          valueKey: 'code',
-          textKey: 'name'
-        }
-      }, {
+        }, {
+          name: 'Radio 1',
+          code: 'radio1',
+          type: 'radio',
+          changeFn: changeFn,
+          radioConfig: {
+            options: [{
+              name: 'Option1',
+              code: 'option1'
+            }, {
+              name: 'Option2',
+              code: 'option2'
+            }],
+            valueKey: 'code',
+            textKey: 'name'
+          }
+        }, {
         name: 'Payment Details Shared',
         code: 'paymentDetailsShared',
         type: 'checkbox',

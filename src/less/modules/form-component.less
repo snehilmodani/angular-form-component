@@ -1,14 +1,15 @@
 // Variables
-@black12: rgba(0, 0, 0, 0.12);
-
 @tm_green: #00a465;
 @tm_red: #e94220;
 @tm_black: #121617;
+@tm_blue: #23b2eb;
+@tm_yellow: #f5ae0a;
 
 @tm_gray1: #4d5556;
 @tm_gray2: #6c7375;
 @tm_gray3: #a1a6a7;
 @tm_gray4: #d2d5d6;
+@tm_gray5: #f5f5f5;
 
 .placeholder(@color){
 	&::-webkit-input-placeholder {
@@ -56,7 +57,7 @@
 		&.md-warning {
 			.md-datepicker-input-container, .md-datepicker-button {
 				border-width: 1px 1px 1px;
-				border-color: @tm_red;
+				border-color: @tm_yellow;
 			}
 		}
 		&.ng-invalid{
@@ -67,7 +68,7 @@
 			}
 		}
 		.md-datepicker-button {
-		    border: 1px solid @black12;
+		    border: 1px solid @tm_gray4;
 		    border-radius: 0;
 			border-right: none;
 			margin-left: 0;
@@ -77,7 +78,7 @@
 			width: 100%;
 			padding-left: 6px;
 			padding-bottom: 0;
-			border: solid 1px @black12;
+			border: solid 1px @tm_gray4;
 			border-left: none;
 			margin-left: 0;
 			margin-bottom: 0;
@@ -94,6 +95,11 @@
 	}
 	md-checkbox {
 		margin: 10px 0;
+		&[disabled].md-checked, &[readonly].md-checked {
+			.md-icon {
+				background-color: @tm_gray4;
+			}
+		}
 	}
 	md-input-container {
 		margin-top: 0px;
@@ -134,13 +140,13 @@
 				border-color: @tm_gray4;
 				margin-bottom: inherit;
 				background-image: none;
-				background-color: @tm_gray4;
-				color: @tm_gray3;
-				.placeholder(@tm_gray3);
+				background-color: @tm_gray5;
+				color: @tm_black;
+				.placeholder(@tm_gray4);
 			}
 			&.md-warning {
 				border-width: 1px 1px 1px;
-				border-color: @tm_red;
+				border-color: @tm_yellow;
 			}
 			&.ng-invalid {
 				&.ng-touched {
@@ -149,9 +155,9 @@
 				}
 			}
 			&[readonly] {
-				background-color: @tm_gray4;
+				background-color: @tm_gray5;
 				color: @tm_black;
-				.placeholder(@tm_gray3);
+				.placeholder(@tm_gray4);
 			}
 		}
 
@@ -165,19 +171,19 @@
       &[disabled] {
         border-color: @tm_gray4;
 				margin-bottom: inherit;
-				background-color: @tm_gray4;
+				background-color: @tm_gray5;
         background-image: none;
-				color: @tm_gray3;
-				.placeholder(@tm_gray3);
+				color: @tm_black;
+				.placeholder(@tm_gray4);
       }
 			&[readonly] {
-				background-color: @tm_gray4;
+				background-color: @tm_gray5;
 				color: @tm_black;
-				.placeholder(@tm_gray3);
+				.placeholder(@tm_gray4);
 			}
       &.md-warning {
 				border-width: 1px 1px 1px;
-				border-color: @tm_red;
+				border-color: @tm_yellow;
 			}
       &.ng-invalid {
         &.ng-dirty {
@@ -194,12 +200,13 @@
 				.placeholder(@tm_gray4);
 				&[readonly]{
 					border-color: @tm_gray4;
-					.placeholder(@tm_gray3);
+					color: @tm_black;
+					.placeholder(@tm_gray4);
 				}
 				&[disabled]{
 					border-color: @tm_gray4;
-					color: @tm_gray3;
-					.placeholder(@tm_gray3);
+					color: @tm_black;
+					.placeholder(@tm_gray4);
 				}
       }
     }
@@ -244,15 +251,13 @@
 		&.md-warning {
 			.md-select-value {
 				border-width: 1px 1px 1px;
-				border-color: @tm_red;
+				border-color: @tm_yellow;
 			}
 		}
-		&.ng-invalid{
-			&.ng-dirty {
-				.md-select-value {
-					border-width: 1px 1px 1px;
-					border-color: @tm_red !important;
-				}
+		&.ng-invalid.ng-dirty{
+			.md-select-value {
+				border-width: 1px 1px 1px;
+				border-color: @tm_red !important;
 			}
 		}
 		&.md-input-has-value {
@@ -260,15 +265,20 @@
 				display: none;
 			}
 		}
+		&[disabled], &[readonly] {
+			.md-select-value {
+				background-color: @tm_gray5;
+				color: @tm_black;
+				.md-select-icon{
+					display: none;
+				}
+			}
+		}
 		.md-select-value {
 			padding: 2px 5px 2px 10px;
-			border: solid 1px @black12 !important;
+			border: solid 1px @tm_gray4 !important;
 			border-radius: 2px;
-			// .ng-invalid{
-			// 	&.ng-dirty {
-			// 		border-width: 1px 1px 1px;
-			// 	}
-			// }
+			color: @tm_black;
 			:first-child {
 				transform: translate3d(0,0,0);
 				-webkit-transform: translate3d(0,0,0);
@@ -278,6 +288,9 @@
 					top: 0;
 					opacity: 0.54;
 				}
+			}
+			&.md-select-placeholder {
+				color: @tm_gray4 !important;
 			}
 		}
 	}
