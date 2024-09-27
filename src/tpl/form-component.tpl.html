@@ -160,13 +160,13 @@
 					ng-required="config.required || false"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select" ng-disabled="true">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select" ng-disabled="true">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select" ng-disabled="true">
 	        {{option}}
 	      </md-option>
-				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.options" ng-value="key" data-auto="{{config.code}}-{{key}}-select">
+				<md-option ng-if="config.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.selectConfig.options" ng-value="key" data-auto="{{config.code}}-{{key}}-select" ng-disabled="true">
 					{{value}}
 				</md-option>
 			</md-select>
@@ -288,14 +288,14 @@
 						ng-required="config.dropdownBox.required || false"
 						ng-change="config.dropdownBox.changeFn(model[config.code], model)"
 						ng-blur="config.dropdownBox.blurFn(model[config.code], model)">
-						<md-option ng-if="config.dropdownBox.selectConfig.optionType !== constants.OBJECT && config.dropdownBox.selectConfig.valueKey && config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-checkbox-input">
-							{{option[config.dropdownBox.selectConfig.textKey]}}
+						<md-option ng-if="config.dropdownBox.selectConfig.optionType !== constants.OBJECT && config.dropdownBox.selectConfig.valueKey && config.dropdownBox.selectConfig.textKey" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option[config.dropdownBox.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-checkbox-input"ng-disabled="true">
+							cons
 						</md-option>
-						<md-option ng-if="config.dropdownBox.selectConfig.optionType !== constants.OBJECT && (!config.dropdownBox.selectConfig.valueKey || !config.dropdownBox.selectConfig.textKey)" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option" data-auto="{{config.dropdownBox.code}}-{{option}}-checkbox-input">
-							{{option}}
+						<md-option ng-if="config.dropdownBox.selectConfig.optionType !== constants.OBJECT && (!config.dropdownBox.selectConfig.valueKey || !config.dropdownBox.selectConfig.textKey)" ng-repeat="option in config.dropdownBox.selectConfig.options" ng-value="option" data-auto="{{config.dropdownBox.code}}-{{option}}-checkbox-input"ng-disabled="true">
+							hello
 						</md-option>
-						<md-option ng-if="config.dropdownBox.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.dropdownBox.selectConfig.options" ng-value="key" data-auto="{{config.dropdownBox.code}}-{{key}}-checkbox-input">
-							{{value}}
+						<md-option ng-if="config.dropdownBox.selectConfig.optionType === constants.OBJECT" ng-repeat="(key, value) in config.dropdownBox.selectConfig.options" ng-value="key" data-auto="{{config.dropdownBox.code}}-{{key}}-checkbox-input" ng-disabled="true" >
+							hi
 						</md-option>
 					</md-select>
 			</md-input-container>
