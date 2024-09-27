@@ -136,7 +136,7 @@
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)"
 					data-auto="{{config.code}}-select" >
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select" ng-disabled="option[disabled]">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
 	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
@@ -160,7 +160,7 @@
 					ng-required="config.required || false"
 					ng-change="config.changeFn(model[config.code], model)"
 					ng-blur="config.blurFn(model[config.code], model)">
-	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select" disabled="option[disabled]">
+	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && config.selectConfig.valueKey && config.selectConfig.textKey" ng-repeat="option in config.selectConfig.options" ng-value="option[config.selectConfig.valueKey]" data-auto="{{config.code}}-{{option[config.selectConfig.valueKey]}}-select">
 	        {{option[config.selectConfig.textKey]}}
 	      </md-option>
 	      <md-option ng-if="config.selectConfig.optionType !== constants.OBJECT && (!config.selectConfig.valueKey || !config.selectConfig.textKey)" ng-repeat="option in config.selectConfig.options" ng-value="option" data-auto="{{config.code}}-{{option}}-select">
